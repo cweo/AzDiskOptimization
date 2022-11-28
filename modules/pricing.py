@@ -85,7 +85,7 @@ def summarize(df: pd.DataFrame, save_csv: bool = True, csv_name: str = "disk_rec
     print("# DISCLAIMER: The cost estimates are based on the current pricing of the Azure services and are subject to change.".ljust(fill - 2), "#")
     print("# DISCLAIMER: The recommendations does not align with WAF Reliability as we do not take into account wanted SLAs for machines.".ljust(fill - 2), "#")
     print("# DISCLAIMER: Implementing these recommendations may not be possible due to other constraints such as VM size, OS, etc.".ljust(fill - 2), "#")
-    print(f"# USING {PAYG_discount}% DISCOUNT".ljust(fill - 2), "#")
+    print(f"# USING {100 * PAYG_discount}% DISCOUNT".ljust(fill - 2), "#")
     print(f"# ESTIMATED TOTAL: Current cost: ${current_cost} / month || After recommendations: ${projected_cost} / month -> ${round(projected_cost - current_cost, 2)} ({100 * round((projected_cost - current_cost) / current_cost, 2)}%) / month".ljust(fill - 2), "#")
     print(f"# ESTIMATED FIXED: Current cost: ${fixed_current_cost} / month || After recommendations: ${fixed_projected_cost} / month -> ${round(fixed_projected_cost - fixed_current_cost, 2)} ({100 * round((fixed_projected_cost - fixed_current_cost) / fixed_current_cost, 2)}%) / month".ljust(fill - 2), "#")
     print(f"# ESTIMATED VARIABLE: Current cost: ${variable_current_cost} / month || After recommendations: ${variable_projected_cost} / month -> ${round(variable_projected_cost - variable_current_cost, 2)} ({100 * round((variable_projected_cost - variable_current_cost) / variable_current_cost, 2)}%) / month".ljust(fill - 2), "#")
