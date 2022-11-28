@@ -1,0 +1,204 @@
+{"STANDARD_HDD": {
+    "S4": {
+        "size": 32,
+        "IOPS": 500,
+        "throughput": 60
+    },
+    "S6": {
+        "size": 64,
+        "IOPS": 500,
+        "throughput": 60
+    },
+    "S10": {
+        "size": 128,
+        "IOPS": 500,
+        "throughput": 60
+    },
+    "S15": {
+        "size": 256,
+        "IOPS": 500,
+        "throughput": 60
+    },
+    "S20": {
+        "size": 512,
+        "IOPS": 500,
+        "throughput": 60
+    },
+    "S30": {
+        "size": 1024,
+        "IOPS": 500,
+        "throughput": 60
+    },
+    "S40": {
+        "size": 2048,
+        "IOPS": 500,
+        "throughput": 60
+    },
+    "S50": {
+        "size": 4096,
+        "IOPS": 500,
+        "throughput": 60
+    },
+    "S60": {
+        "size": 8192,
+        "IOPS": 1300,
+        "throughput": 300
+    },
+    "S70": {
+        "size": 16384,
+        "IOPS": 2000,
+        "throughput": 500
+    },
+    "S80": {
+        "size": 32768,
+        "IOPS": 2000,
+        "throughput": 500
+    }
+},
+
+"STANDARD_SSD": {
+    "E1": {
+        "size": 4,
+        "IOPS": 500,
+        "throughput": 60
+    },
+    "E2": {
+        "size": 8,
+        "IOPS": 500,
+        "throughput": 60
+    },
+    "E3": {
+        "size": 16,
+        "IOPS": 500,
+        "throughput": 60
+    },
+    "E4": {
+        "size": 32,
+        "IOPS": 500,
+        "throughput": 60
+    },
+    "E6": {
+        "size": 64,
+        "IOPS": 500,
+        "throughput": 60
+    },
+    "E10": {
+        "size": 128,
+        "IOPS": 500,
+        "throughput": 60
+    },
+    "E15": {
+        "size": 256,
+        "IOPS": 500,
+        "throughput": 60
+    },
+    "E20": {
+        "size": 512,
+        "IOPS": 500,
+        "throughput": 60
+    },
+    "E30": {
+        "size": 1024,
+        "IOPS": 500,
+        "throughput": 60
+    },
+    "E40": {
+        "size": 2048,
+        "IOPS": 500,
+        "throughput": 60
+    },
+    "E50": {
+        "size": 4096,
+        "IOPS": 500,
+        "throughput": 60
+    },
+    "E60": {
+        "size": 8192,
+        "IOPS": 2000,
+        "throughput": 400
+    },
+    "E70": {
+        "size": 16384,
+        "IOPS": 4000,
+        "throughput": 600
+    },
+    "E80": {
+        "size": 32768,
+        "IOPS": 6000,
+        "throughput": 750
+    }
+},
+
+"PREMIUM_SSD": {
+    "P1": {
+        "size": 4,
+        "IOPS": 120,
+        "throughput": 25
+    },
+    "P2": {
+        "size": 8,
+        "IOPS": 120,
+        "throughput": 25
+    },
+    "P3": {
+        "size": 16,
+        "IOPS": 120,
+        "throughput": 25
+    },
+    "P4": {
+        "size": 32,
+        "IOPS": 120,
+        "throughput": 25
+    },
+    "P6": {
+        "size": 64,
+        "IOPS": 240,
+        "throughput": 50
+    },
+    "P10": {
+        "size": 128,
+        "IOPS": 500,
+        "throughput": 100
+    },
+    "P15": {
+        "size": 256,
+        "IOPS": 1100,
+        "throughput": 125
+    },
+    "P20": {
+        "size": 512,
+        "IOPS": 2300,
+        "throughput": 150
+    },
+    "P30": {
+        "size": 1024,
+        "IOPS": 5000,
+        "throughput": 200
+    },
+    "P40": {
+        "size": 2048,
+        "IOPS": 7500,
+        "throughput": 250
+    },
+    "P50": {
+        "size": 4096,
+        "IOPS": 7500,
+        "throughput": 250
+    },
+    "P60": {
+        "size": 8192,
+        "IOPS": 16000,
+        "throughput": 500
+    },
+    "P70": {
+        "size": 16384,
+        "IOPS": 18000,
+        "throughput": 750
+    },
+    "P80": {
+        "size": 32768,
+        "IOPS": 20000,
+        "throughput": 900
+    }
+}
+}
