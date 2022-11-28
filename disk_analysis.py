@@ -5,7 +5,7 @@
 import json
 import argparse
 import pandas as pd
-import multiprocessing
+# import multiprocessing
 from tqdm import tqdm
 from pathlib import Path
 from azure.identity import DefaultAzureCredential
@@ -48,7 +48,7 @@ def main(args):
         disks_throughput_IOPS_df = pd.read_pickle(path_throughout_IOPS)
     else:
         token = credential.get_token(
-            "https://management.azure.com/.default").token
+                "https://management.azure.com/.default").token
         list_disks_throughput_IOPS = []
         for _, disk in tqdm(disks_df.iterrows(), total=disks_df.shape[0], desc="Getting disk throughput and IOPS..."):
             throughput, IOPS = get_disk_throughput_IOPS(
@@ -58,7 +58,7 @@ def main(args):
                 "throughput": throughput,
                 "IOPS": IOPS
             })
-        
+
         disks_throughput_IOPS_df = pd.DataFrame(list_disks_throughput_IOPS)
         path_throughout_IOPS.parent.mkdir(parents=True, exist_ok=True)
         disks_throughput_IOPS_df.to_pickle(path_throughout_IOPS)
@@ -107,13 +107,12 @@ def main(args):
         token = credential.get_token(
             "https://management.azure.com/.default").token
         list_tier_pricing = []
-        for _, sku in tqdm(tier_location_pricing_df.iterrows(), total=tier_location_pricing_df.shape[0], desc="Getting pricing for current and recommended tier..."):
-            redundancy = sku.sku_name.split("_")[1]
+        for _, item in tqdm(tier_location_pricing_df.iterrows(), total=tier_location_pricing_df.shape[0], desc="Getting pricing for current and recommended tier..."):
             fixed_pricing, variable_pricing = get_tier_pricing(
-                sku.tier, sku.location, redundancy)
+                item.tier, item.location, redundancy="LRS")
             list_tier_pricing.append({
-                "tier": sku.tier,
-                "location": sku.location,
+                "tier": item.tier,
+                "location": item.location,
                 "fixed_pricing": fixed_pricing,
                 "variable_pricing": variable_pricing
             })

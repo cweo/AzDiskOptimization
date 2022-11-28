@@ -19,3 +19,4 @@ Current known limitations:
 * Recommendation is done by comparing throughput and IOPS compared to available Premium SSD, Standard SSD and Standard HDD, not using the __generated price__.
 * Recommendations are done only to lower tier.
 * Premium SSD v2 is not supported.
+* Redundancy is not used by the pricing estimator, LRS is always used.
