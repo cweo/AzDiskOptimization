@@ -65,10 +65,9 @@ def summarize(df: pd.DataFrame, save_csv: bool = True, csv_name: str = "disk_rec
         raise ValueError("PAYG discount must be a value between 0 and 1")
     if save_csv:
         csv_path = Path(f"output/{csv_name}_{date.today()}.csv")
-        if not(csv_path.is_file()):
-            print(f"Saving recommendation results to {csv_path}.")
-            csv_path.parent.mkdir(parents=True, exist_ok=True)
-            df.to_csv(csv_path)
+        print(f"Saving recommendation results to {csv_path}.")
+        csv_path.parent.mkdir(parents=True, exist_ok=True)
+        df.to_csv(csv_path, index=False)
     cost_agg_df = df.agg({'current_fixed_pricing': ['sum'], 'estimated_current_variable_pricing': [
                          'sum'], 'recommended_fixed_pricing': ['sum'], 'estimated_recommended_variable_pricing': ['sum']})
     fixed_current_cost = round(

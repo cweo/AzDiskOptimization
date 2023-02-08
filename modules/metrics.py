@@ -16,14 +16,17 @@ def sum_metrics(timeseries_avg_max_dict, perf_metric: str = "IOPS"):
 
 
 def get_timeseries_average_max(timeseries_dict: List[dict]) -> tuple:
+    def get_avg_max_lambda(x): return (x["average"], x["maximum"])
     try:
         timeseries_dict = timeseries_dict[0]["data"]
     except Exception as e:
+        # print(f"Issue gathering timerseries in get_timeseries_average_max, exception: {e}")
+        return {"average": 0, "maximum": 0}
+    try:
+        timeseries_array = np.array(list(map(get_avg_max_lambda, timeseries_dict)))
+    except Exception as e:
         # print(f"Issue parsing average_max metric, exception: {e}")
         return {"average": 0, "maximum": 0}
-
-    def get_avg_max_lambda(x): return (x["average"], x["maximum"])
-    timeseries_array = np.array(list(map(get_avg_max_lambda, timeseries_dict)))
     return {"average": timeseries_array.mean(), "maximum": timeseries_array.max()}
 
 

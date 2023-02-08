@@ -29,9 +29,13 @@ def get_list_disks_df(credential: DefaultAzureCredential, subscription_client: S
         # print(subscription.display_name, subscription.id)
         compute_client = ComputeManagementClient(
             credential, subscription.subscription_id)
-        disk_list.extend(
-            map(schema_lambda, compute_client.disks.list())
-        )
+        try:
+            disk_list.extend(
+                map(schema_lambda, compute_client.disks.list())
+            )
+        except Exception as e:
+            print("Exception in get_list_disks_df: ", e)
+            pass
     disk_df = pd.DataFrame.from_dict(disk_list)
     return disk_df
 

@@ -2,3 +2,4 @@ azure-mgmt-compute==29.0.0
 azure-identity==1.11.0
 azure-mgmt-subscription==3.1.1
 tqdm==4.64.1
+pandas==1.5.3
