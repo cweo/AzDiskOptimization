@@ -3,7 +3,7 @@ Disk analysis script to recommend disk SKU based on disk throughput and IOPS usa
 
 Example usage:
 ```bash
-  az login
+  Connect-AzAccount
   python disk_analysis.py --use_disks_df --PAYG_discount 0.17 
 ```
 
